@@ -16,7 +16,9 @@ router.post("/", async (req, res, next) => {
             res.status(201).json(resource);
         })
         .catch((err) => {
+            
             res.status(500).json({ message: "Failed to insert new resource" });
+            
         });
 });
 
@@ -26,6 +28,7 @@ router.get("/", async (req, res, next) => {
             res.json(resources);
         })
         .catch((err) => {
+            console.log(err);
             res.status(500).json({ message: "Failed to get resources" });
         });
 });
